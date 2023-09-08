@@ -23,7 +23,8 @@ public:
         void saveToFile(const string& filename) const;
 	void loadFromFile(const string& filename);
 	void displayDateTimeOfLastSave();
-        	
+	void displayTimeSinceLastSave(); 
+
 	GameCharacter operator+(const GameCharacter& other);
 	bool operator<(const GameCharacter& other);
 	bool operator>(const GameCharacter& other);
@@ -37,7 +38,7 @@ private:
 	int attackPoints;
 	int defensePoints;
 	bool isAlive;	
-	time_t lastSaveTime;	
+	time_t lastSaveTime = time(0);	
 };
 
 

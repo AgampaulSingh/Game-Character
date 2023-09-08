@@ -234,8 +234,16 @@ void GameCharacter::loadFromFile(const string& filename)
 
 void GameCharacter::displayDateTimeOfLastSave()
 {
-	lastSaveTime = time(0);
 	cout << "Last save Time: " << std::ctime(&lastSaveTime);
 	
 }
 
+
+void GameCharacter::displayTimeSinceLastSave()
+{
+	time_t timeDiff = std::difftime(time(0), lastSaveTime);
+	
+	cout << "Time elapsed since last save: " << timeDiff << endl;  
+
+
+}	

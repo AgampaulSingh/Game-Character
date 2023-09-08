@@ -36,6 +36,9 @@ int main()
 	else 
 		c1.attack(c5);
 
+	c1.displayDateTimeOfLastSave();
+	c1.displayTimeSinceLastSave();
+
 	cout << "---------- Game End ----------" << endl;
 	cout << "Enter file to save data into: " ;
 	getline(cin, outputFile);
