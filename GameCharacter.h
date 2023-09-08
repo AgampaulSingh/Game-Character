@@ -2,6 +2,7 @@
 #ifndef GAMECHARACTER_H
 #define GAMECHARACTER_H
 #include <string>
+#include <ctime>
 using namespace std;
 
 class GameCharacter{
@@ -21,7 +22,7 @@ public:
 	void attack(GameCharacter& target);
         void saveToFile(const string& filename) const;
 	void loadFromFile(const string& filename);
-
+	void displayDateTimeOfLastSave();
         	
 	GameCharacter operator+(const GameCharacter& other);
 	bool operator<(const GameCharacter& other);
@@ -36,7 +37,7 @@ private:
 	int attackPoints;
 	int defensePoints;
 	bool isAlive;	
-		
+	time_t lastSaveTime;	
 };
 
 

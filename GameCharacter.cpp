@@ -1,6 +1,7 @@
 #include "GameCharacter.h"
 #include <iostream>
 #include <fstream>
+#include <ctime>
 using namespace std;
 
 
@@ -228,6 +229,13 @@ void GameCharacter::loadFromFile(const string& filename)
 	inFile >> defensePoints;
 	inFile >> isAlive;
 	
+	
+}
+
+void GameCharacter::displayDateTimeOfLastSave()
+{
+	lastSaveTime = time(0);
+	cout << "Last save Time: " << std::ctime(&lastSaveTime);
 	
 }
 
